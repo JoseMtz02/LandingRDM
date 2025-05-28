@@ -27,9 +27,9 @@ const FadeSlider: React.FC<FadeSliderProps> = ({
   speed = 600, 
 }) => {
   return (
-    <div className="w-full bg-gradient-to-bl ">
+    <div className="w-full ">
       <h2 className="text-white text-4xl font-bold mb-6 text-center">{title}</h2>
-      <div className="relative w-full">
+      <div className="relative w-full pt-6 pb-6">
         <Swiper
           modules={[Navigation]}
           direction="horizontal"
@@ -43,14 +43,14 @@ const FadeSlider: React.FC<FadeSliderProps> = ({
         >
           {images.map((image) => (
             <SwiperSlide key={image.id}>
-              <div className="w-[220px] h-[220px] bg-gray-800 flex-shrink-0 snap-center relative border-8 border-white rounded-3xl shadow-lg">
+              <div className="w-[230px] h-[200px] relative border-8 border-white rounded-3xl shadow-lg">
                 <img
                   src={image.src}
                   alt={image.alt}
                   className="w-full h-full object-cover rounded-lg"
                   onDragStart={(e) => e.preventDefault()}
                 />
-                <span className="absolute bottom-3 left-3 text-white text-sm font-medium px-2 py-1 rounded">
+                <span className="absolute bottom-2 left-3 text-white px-2 font-semibold">
                   {image.label}
                 </span>
               </div>
@@ -66,7 +66,7 @@ const FadeSlider: React.FC<FadeSliderProps> = ({
               touch-action: pan-x;
             }
             .swiper-slide {
-              width: 220px !important;
+              width: 300px !important;
               height: 220px !important;
               display: flex;
               justify-content: center;
