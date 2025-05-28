@@ -1,7 +1,12 @@
 import "./App.css";
+import BannerMain from "./components/BannerMain";
 
 function App() {
-  return <div className="text-center"> Hola mundo</div>;
+  return (
+    <>
+      <BannerMain />
+    </>
+  );
 }
 
 export default App;
