@@ -43,7 +43,7 @@ const FadeSlider: React.FC<FadeSliderProps> = ({
         >
           {images.map((image) => (
             <SwiperSlide key={image.id}>
-              <div className="w-[230px] h-[200px] relative border-8 border-white rounded-3xl shadow-lg">
+              <div className="w-[230px] h-[200px] relative border-8 border-white rounded-3xl">
                 <img
                   src={image.src}
                   alt={image.alt}
@@ -80,8 +80,6 @@ const FadeSlider: React.FC<FadeSliderProps> = ({
             }
           `}
         </style>
-        <div className="absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-black to-transparent pointer-events-none" />
-        <div className="absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-black to-transparent pointer-events-none" />
       </div>
     </div>
   );

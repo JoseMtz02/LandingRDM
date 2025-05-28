@@ -1,11 +1,15 @@
 import "./App.css";
 import SlidersPage from "./views/section-sliders/SlidersSection";
+import BannerMain from "./components/BannerMain";
+
 
 function App() {
   return (
-    <div>
+    <>
+      <BannerMain />
       <SlidersPage/>
-    </div>
+
+    </>
   );
 }
 
