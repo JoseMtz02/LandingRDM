@@ -4,3 +4,63 @@
 .font-montserrat {
   font-family: Montserrat, sans-serif;
 }
+
+/* ESTILOS DEL SIDEBAR */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 20%;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0));
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.menu-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+/*TAMAÑO DE LOS ICONOS*/
+.menu-item .icon {
+  color: white;
+  font-size: 32px;
+  transition: color 0.3s ease;
+}
+
+/* TEXT0S */
+.menu-item .label {
+  color: rgb(220, 169, 3);
+  font-size: 24px;
+  font-weight: 450;
+  opacity: 0;
+  position: absolute;
+  left: 50px;
+  white-space: nowrap;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.menu-item:hover .icon {
+  color: rgb(220, 169, 3);
+}
+
+.menu-item:hover .label {
+  opacity: 1;
+}
+
