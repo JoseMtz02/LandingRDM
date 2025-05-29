@@ -12,12 +12,17 @@
   left: 0;
   height: 100vh;
   width: 20%;
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0));
+  background: linear-gradient(to right, rgb(0, 0, 0.95), rgba(0, 0, 0, 0));
   padding: 2rem 1rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   z-index: 1000;
+}
+
+.sidebar.with-shadow {
+  box-shadow: 60px 0 80px rgba(0, 0, 0, 0.9);
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.834));
 }
 
 .menu {
@@ -43,7 +48,7 @@
   transition: color 0.3s ease;
 }
 
-/* TEXT0S */
+/* TEXTOS */
 .menu-item .label {
   color: rgb(220, 169, 3);
   font-size: 24px;
@@ -63,4 +68,3 @@
 .menu-item:hover .label {
   opacity: 1;
 }
-
