@@ -1,6 +1,6 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation } from 'swiper/modules';
+import { Navigation, EffectFade } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 
@@ -22,28 +22,34 @@ interface FadeSliderProps {
 const FadeSlider: React.FC<FadeSliderProps> = ({
   title,
   images,
-  spaceBetween = 60, 
-  slidesPerView = 3, 
-  speed = 600, 
+  spaceBetween = 60,
+  slidesPerView = 3,
+  speed = 600,
 }) => {
   return (
-    <div className="w-full ">
-      <h2 className="text-white text-4xl font-bold mb-6 text-center">{title}</h2>
+    <div className="w-full relative pt-10">
+      <h2 className="text-white text-4xl font-bold p-10 text-center">{title}</h2>
       <div className="relative w-full pt-6 pb-6">
         <Swiper
-          modules={[Navigation]}
+          modules={[Navigation, EffectFade]}
           direction="horizontal"
           spaceBetween={spaceBetween}
           slidesPerView={slidesPerView}
           speed={speed}
           grabCursor={true}
-          loop={false}
+          loop={false} 
+          resistance={true} 
+          resistanceRatio={0.5} 
+          initialSlide={0} 
           className="w-full"
-          style={{ paddingBottom: '16px' }}
+          style={{ paddingBottom: '16px', paddingLeft: '340px' }} 
         >
           {images.map((image) => (
             <SwiperSlide key={image.id}>
               <div className="w-[230px] h-[200px] relative border-8 border-white rounded-3xl">
+              <span className="absolute bottom-7 left-0 text-white px-3 font-sans text-sm uppercase">
+                  REAL DEL MONTE
+                </span>
                 <img
                   src={image.src}
                   alt={image.alt}
@@ -66,8 +72,8 @@ const FadeSlider: React.FC<FadeSliderProps> = ({
               touch-action: pan-x;
             }
             .swiper-slide {
-              width: 300px !important;
-              height: 220px !important;
+              width: 230px !important;
+              height: 200px !important;
               display: flex;
               justify-content: center;
               align-items: center;
@@ -77,6 +83,26 @@ const FadeSlider: React.FC<FadeSliderProps> = ({
               -webkit-user-drag: none;
               user-select: none;
               -webkit-user-select: none;
+            }
+            .swiper-button-prev, .swiper-button-next {
+              color: white;
+              background: rgba(0, 0, 0, 0.5);
+              border-radius: 50%;
+              width: 40px;
+              height: 40px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              z-index: 20;
+            }
+            .swiper-button-prev {
+              left: 10px; 
+            }
+            .swiper-button-next {
+              right: 10px;
+            }
+            .swiper-button-prev:after, .swiper-button-next:after {
+              font-size: 20px;
             }
           `}
         </style>

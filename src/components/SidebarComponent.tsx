@@ -18,10 +18,13 @@ const menuItems = [
   { icon: <FiCamera />, label: "Tours" },
   { icon: <MdOutlineMenu />, label: "Menú" },
 ];
+interface SidebarProps {
+  isSlidersVisible: boolean;
+}
 
-export function Sidebar() {
+export function Sidebar({isSlidersVisible} : SidebarProps) {
   return (
-    <aside className="sidebar">
+    <aside className={`sidebar ${isSlidersVisible ? "with-shadow" : ""}`}>
       <nav className="menu">
         {menuItems.map(({ icon, label }, idx) => (
           <div className="menu-item" key={idx}>
