@@ -2,13 +2,19 @@ import "./App.css";
 import SlidersPage from "./views/section-sliders/SlidersSection";
 import BannerMain from "./components/BannerMain";
 import { Sidebar } from "./components/SidebarComponent";
+import useIsVisible from "./hook/useVisible";
 
 function App() {
+  const [slidersRef, isSlidersVisible] = useIsVisible();
+
   return (
     <>
-      <Sidebar />
+      <Sidebar isSlidersVisible={isSlidersVisible} />
       <BannerMain />
-      <SlidersPage />
+
+      <div ref={slidersRef}>
+        <SlidersPage />
+      </div>
 
     </>
   );
