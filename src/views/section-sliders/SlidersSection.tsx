@@ -69,13 +69,7 @@ const SlidersPage: React.FC = () => {
   return (
     <div className="bg-[radial-gradient(ellipse_at_center,_#1a1a1a_30%,_#000000_100%)] relative">
       <section className="relative sliders-container pt-[100px]">
-        <FadeSlider
-          title="Atractivos"
-          images={sharedImages}
-          spaceBetween={60}
-          slidesPerView={3}
-          speed={600}
-        />
+       
         <FadeSlider
           title="Festividades"
           images={festsImages}

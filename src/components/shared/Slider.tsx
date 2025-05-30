@@ -28,8 +28,8 @@ const FadeSlider: React.FC<FadeSliderProps> = ({
 }) => {
   return (
     <div className="w-full relative pt-10">
-      <h2 className="text-white text-4xl font-bold p-10 text-center">{title}</h2>
-      <div className="relative w-full pt-6 pb-6">
+      <h2 className="text-white text-4xl font-bold pl-30 pt-20 pb-20 text-center slider-title">{title}</h2>
+      <div className="relative w-full pt-6 pb-40">
         <Swiper
           modules={[Navigation, EffectFade]}
           direction="horizontal"
