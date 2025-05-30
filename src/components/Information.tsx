@@ -1,17 +1,41 @@
-// src/components/RealDelMonteInfo.tsx
-import React from "react";
+import { forwardRef } from "react";
+import FadeSlider from "./shared/Slider";
 
-const Information: React.FC = () => {
+const Information = forwardRef<HTMLDivElement>((_, ref) => {
+  console.log("Information renderizado, ref recibido:", ref);
+
+  const sharedImages = [
+    { id: 1, src: '/images/RealMonte2.jpg', alt: 'Real Monte', label: 'Descubre los rumbos' },
+    { id: 2, src: '/images/BolillosDelMonte.jpg', alt: 'Bolillos', label: 'Elabora tu pastel' },
+    { id: 3, src: '/images/PeñaZumate.jpeg', alt: 'Peña Zumate', label: 'La Peña del Zumate' },
+    { id: 4, src: '/images/minardm.jpg', alt: 'Mina', label: 'Mina de Acosta' },
+    { id: 6, src: '/images/ruedardm.jpg', alt: 'Rueda', label: 'Mina La Dificultad' },
+    { id: 7, src: '/images/UniversidadMonte.jpg', alt: 'Universidad Monte', label: 'Museo Casa Grande' },
+    { id: 8, src: '/images/Callejon.jpg', alt: 'Callejon', label: 'Callejon de los artistas' },
+    { id: 9, src: '/images/CascadaBandola.png', alt: 'Cascada de Bandola', label: 'Cascada de Bandola' },
+    { id: 10, src: '/images/ArtesaniasMonte.jpg', alt: 'Artesianias Monte', label: 'Compra artesanía' },
+  ];
+
+
   return (
-    <div className="bg-black text-white px-8 py-20 md:pl-24 md:pr-16 min-h-screen">
-      {/* Título centrado */}
-      <h1 className="text-4xl md:text-3xl pl-30 font-bold text-center mb-10">
+    <div
+      ref={ref}
+      className="bg-[radial-gradient(ellipse_at_center,_#1a1a1a_30%,_#000000_100%)] relative text-white ">
+
+        <FadeSlider
+        title="Atractivos"
+       images={sharedImages}
+       spaceBetween={60}
+        slidesPerView={3}
+       speed={600}
+        />
+      
+      <h1 className="text-4xl pl-30 font-bold text-center mb-10">
         Vive su mágia
       </h1>
       <br />
       <br />
-      {/* Párrafo introductorio centrado */}
-      <p className="max-w-5xl mx-auto text-gray-300 text-lg pl-50 leading-relaxed  mb-16">
+      <p className="max-w-5xl mx-auto text-gray-300 text-xl pl-50 leading-relaxed  mb-16">
         Muchas historias confluyen en este poblado de legado minero: sus casonas
         y <br /> construcciones de aire inglés se combinan con el olor a pastes
         y pan de pulque cocinados <br /> en sus hornos; mientras el frío y la
@@ -63,7 +87,7 @@ const Information: React.FC = () => {
       <div className="mx-auto mt-12 max-w-4xl pl-35">
         <h2 className="text-4xl text-center font-bold mb-8">Imprescindibles</h2>
         <br />
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pb-30">
           <div className="flex items-center justify-center">
             <span className="text-5xl font-bold text-white mr-2 pb-10">1</span>
             <p className="text-lg">
@@ -82,6 +106,6 @@ const Information: React.FC = () => {
       </div>
     </div>
   );
-};
+});
 
 export default Information;

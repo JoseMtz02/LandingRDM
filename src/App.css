@@ -68,3 +68,13 @@
 .menu-item:hover .label {
   opacity: 1;
 }
+
+.slider-title {
+  margin-top: -12rem; 
+  position: relative;
+  z-index: 10; 
+}
+
+.animate-fade-in {
+  animation: fade-in 0.5s ease-out;
+}
