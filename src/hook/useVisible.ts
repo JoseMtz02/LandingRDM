@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef } from 'react';
 
-const useIsVisible = (): [React.RefObject<HTMLDivElement>, boolean] => {
+const useIsVisible = (): [React.RefObject<HTMLDivElement | null>, boolean] => {
   const ref = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState<boolean>(false);
 
@@ -10,7 +10,7 @@ const useIsVisible = (): [React.RefObject<HTMLDivElement>, boolean] => {
         setIsVisible(entry.isIntersecting);
       },
       {
-        threshold: 0.3, 
+        threshold: 0.3,
       }
     );
 

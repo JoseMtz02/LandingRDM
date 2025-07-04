@@ -2,18 +2,6 @@ import React from 'react';
 import FadeSlider from '../../components/shared/Slider';
 
 const SlidersPage: React.FC = () => {
-  const sharedImages = [
-    { id: 1, src: '/images/RealMonte2.jpg', alt: 'Real Monte', label: 'Descubre los rumbos del centro' },
-    { id: 2, src: '/images/BolillosDelMonte.jpg', alt: 'Bolillos', label: 'Elabora tu pastel' },
-    { id: 3, src: '/images/PeñaZumate.jpeg', alt: 'Peña Zumate', label: 'La Peña del Zumate' },
-    { id: 4, src: '/images/minardm.jpg', alt: 'Mina', label: 'Mina de Acosta' },
-    { id: 6, src: '/images/ruedardm.jpg', alt: 'Rueda', label: 'Mina La Dificultad' },
-    { id: 7, src: '/images/UniversidadMonte.jpg', alt: 'Universidad Monte', label: 'Museo Casa Grande' },
-    { id: 8, src: '/images/Callejon.jpg', alt: 'Callejon', label: 'Callejon de los artistas' },
-    { id: 9, src: '/images/CascadaBandola.png', alt: 'Cascada de Bandola', label: 'Cascada de Bandola' },
-    { id: 10, src: '/images/ArtesaniasMonte.jpg', alt: 'Artesianias Monte', label: 'Compra artesanía y productos regionales' },
-  ];
-
   const festsImages = [
     { id: 1, src: '/images/fests/Carnaval.jpg', alt: 'Carnaval', label: 'Carnaval de la Montaña' },
     { id: 2, src: '/images/fests/Fuegos.jpg', alt: 'Fuegos', label: 'Fuegos Artificiales' },
@@ -69,7 +57,6 @@ const SlidersPage: React.FC = () => {
   return (
     <div className="bg-[radial-gradient(ellipse_at_center,_#1a1a1a_30%,_#000000_100%)] relative">
       <section className="relative sliders-container pt-[100px]">
-       
         <FadeSlider
           title="Festividades"
           images={festsImages}
